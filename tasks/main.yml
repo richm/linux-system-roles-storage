@@ -1,4 +1,12 @@
 ---
+- name: Fingerprint
+  command:
+    argv:
+      - python
+      - -c
+      - import syslog; syslog.syslog("system_role:rolename")
+  changed_when: false
+
 - name: Set platform/version specific variables
   include_tasks: tasks/set_vars.yml
 
